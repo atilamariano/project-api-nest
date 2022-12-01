@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+ database:
+    image: bitnami/postgresql
+    ports: 
+      - '5431:5432'
+    container_name: project-api
+    restart: always
+    volumes: 
+      - project-api-disk:/var/lib/postgresql/data
+    environment: 
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: supersenha
+      POSTGRES_DB: projectapi
+
+volumes: 
+  project-api-disk:
