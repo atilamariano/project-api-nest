@@ -16,12 +16,6 @@ export class BookService {
     if (bookExists) {
       throw new Error('Book already exists');
     }
-
-    const book = await this.prisma.book.create({
-      data,
-    });
-
-    return book;
   }
 
   async findAll() {
